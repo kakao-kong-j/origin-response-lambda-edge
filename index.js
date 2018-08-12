@@ -6,11 +6,11 @@ const querystring = require("querystring");
 
 const AWS = require("aws-sdk");
 const S3 = new AWS.S3({
-  region: "ap-northeast-2"
+  region: "<your region>"
 });
 const Sharp = require("sharp");
 
-const BUCKET = "image.cosmochain.io";
+const BUCKET = "<your bucket>";
 
 exports.handler = async (event, context, callback) => {
   const response = event.Records[0].cf.response;
