@@ -1,0 +1,18 @@
+{
+  "name": "origin-response-lambda-edge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf index.zip && rm -rf ./index/index.js",
+    "build": "npm --prefix ./index install ./index",
+    "postbuild": "zip -r index.zip ./index",
+    "deploy": "npm run build && node deploy && npm run clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.310.0",
+    "shelljs": "^0.8.2"
+  }
+}
